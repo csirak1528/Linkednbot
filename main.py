@@ -7,12 +7,15 @@ import time
 browser = webdriver.Chrome('/Users/calebsirak/linkdenbot/chromedriver')
 
 MESSAGE = """
+Lets Talk about Distributed Systems
 
 """
 userData = {
-    "username": "",
-    "password": ""
+    "username": "rudisystems@gmail.com",
+    "password": "rudinet21"
 }
+
+search_link = "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
 
 
 def loadLinkedin():
@@ -49,7 +52,7 @@ def setup():
     inputData("#password", userData["password"])
     click("#organic-div > form > div.login__form_action_container > button")
     click("#remember-me-prompt__form-secondary > button")
-    browser.get("https://www.linkedin.com/search/results/people/?keywords=software%20engineer&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH")
+    browser.get(search_link)
 
 
 def getHref(selector, k=False):
@@ -74,6 +77,11 @@ def changeTab(id):
     time.sleep(1)
 
 
+def changePage():
+    browser.find_element_by_xpath(
+        "/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[5]/div/div/button[2]").click()
+
+
 def loadPeople():
     for i in range(1, 12):
         time.sleep(2)
@@ -96,4 +104,6 @@ def loadPeople():
 
 if __name__ == "__main__":
     setup()
-    loadPeople()
+    while True:
+        loadPeople()
+        changePage()
