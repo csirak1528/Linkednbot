@@ -24,7 +24,7 @@ MacOS Setup Instructions
 9) Now open LinkedIn on a new Google Chrome window and suppose you want to message anyone who comes up under a search for "early stage investor" To do this, type "early stage investor" in the search bar. Then, click "People". Then click "Connections" and make sure 1st and 2nd ONLY are selected. Then apply any other filters you want (I reccomend using Location filter). Once you are done, copy the URL. 
 10) Paste that exact URL into the text for the "search_link" variable. Now we are done editing main.py. 
 11) Now we can use this script to automatically launch Google Chrome, open up LinkedIn, run this exact search query, and message people the text you inserted into main.py. 
-12) On your VSCode, click `Ctrl ~`
+12) On your VSCode, and hit `Ctrl ~`
 13) This will launch a terminal. In this terminal, type `python3 main.py`. Now, wait a few moments and you will see a Chrome window boot up and do what was discussed above. 
 
 That's it! You have successfully automated LinkedIn! 
