@@ -2,6 +2,14 @@
 
 Functionality: This bot will automatically open up Google Chrome and Connect and Message people a piece of text you specify. You can also apply whatever search filters you would normally use on LinkedIn. 
 
+
+Prerequesites (Do this first!): 
+
+1) Open up Terminal on your Mac and run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`. This will install a package manager called Homebrew. 
+2) Run `brew install git` 
+3) Now, run `brew install python3`. 
+4) Now run `python3 -m pip install selenium`.
+
 Setup: 
 
 MacOS Setup Instructions
@@ -18,12 +26,7 @@ MacOS Setup Instructions
 11) Now we can use this script to automatically launch Google Chrome, open up LinkedIn, run this exact search query, and message people the text you inserted into main.py. 
 12) On your VSCode, click `Ctrl ~`
 13) This will launch a terminal. In this terminal, type `python3 main.py`. Now, wait a few moments and you will see a Chrome window boot up and do what was discussed above. 
-  
-Note: If you are a first time user, Step 13 will not work for you yet. Please follow these instructions. 
-  
-1) In the same terminal run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`. This will install a package manager called Homebrew. Now, run `brew install python3`. 
-2) Now run `python3 -m pip install selenium`. Now go back and run Step 13. 
-  
+
 That's it! You have successfully automated LinkedIn! 
 Follow the same protocol to run different searches and filters. Please make sure you monitor the application as it runs because there are some edge cases that have not been addressed yet. For example, if it tries to message someone where it requires you to enter the email of that person first, the bot cannot handle this. You must hit "cancel" and X out that window so that it can move onto the next person. 
   
