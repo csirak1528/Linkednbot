@@ -8,7 +8,6 @@ browser = webdriver.Chrome('/Users/calebsirak/linkdenbot/chromedriver')
 
 MESSAGE = """
 Lets Talk about Distributed Systems
-
 """
 userData = {
     "username": "rudisystems@gmail.com",
@@ -78,8 +77,7 @@ def changeTab(id):
 
 
 def changePage(i):
-    browser.get(
-        f"https://www.linkedin.com/search/results/people/?keywords=software%20engineer&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH&page={i}")
+    browser.get(search_link + f"&page={i}")
 
 
 def loadPeople():
@@ -115,9 +113,12 @@ def loadPeople():
 
 
 if __name__ == "__main__":
-    setup()
-    i = 1
-    while True:
-        loadPeople()
-        i += 1
-        changePage(i)
+    if len(MESSAGE) > 300:
+        print("Please Edit Your Message Under 300 chars.")
+    else:
+        setup()
+        i = 1
+        while True:
+            loadPeople()
+            i += 1
+            changePage(i)
