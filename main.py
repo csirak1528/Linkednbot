@@ -77,24 +77,13 @@ def changeTab(id):
     time.sleep(1)
 
 
-def changePage():
-    try:
-        for i in range(5):
-            try:
-                browser.find_element_by_xpath(
-                    "/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[2]/div[2]/div/button[2]").click()
-            except:
-                pass
-    except:
-        for i in range(5):
-            try:
-                browser.find_element_by_xpath(
-                    "/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[5]/div/div/button[2]").click()
-            except:
-                pass
+def changePage(i):
+    browser.get(
+        f"https://www.linkedin.com/search/results/people/?keywords=software%20engineer&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH&page={i}")
 
 
 def loadPeople():
+    print("new pages")
     for i in range(1, 12):
         time.sleep(2)
         try:
@@ -127,6 +116,8 @@ def loadPeople():
 
 if __name__ == "__main__":
     setup()
+    i = 1
     while True:
         loadPeople()
-        changePage()
+        i += 1
+        changePage(i)
