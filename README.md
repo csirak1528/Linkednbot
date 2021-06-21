@@ -18,7 +18,7 @@ MacOS Setup Instructions
 2) Download and install VSCode from https://code.visualstudio.com/download
 3) Open VSCode and go to File -> Open... -> (Find the LinkednBot folder in your file explorer and click it) 
 4) Click on main.py; you will need to edit this file. 
-5) In the variable called "browser," replace the text with this: /Users/<USERNAME>/Desktop/Linkednbot/chromedriver. USERNAME should be the username of your Mac laptop. (If you don't know this, open a new Terminal and type `cd ..` and type `ls` and you should see your username) 
+5) In the variable called "browser," replace the text with this: /Users/USERNAME/Desktop/Linkednbot/chromedriver. USERNAME should be the username of your Mac laptop. (If you don't know this, open a new Terminal and type `cd ..` and type `ls` and you should see your username) 
 7) In the field that says, "MESSAGE", place in the text you would like to DM people on LinkedIn with. This message must be under 300 characters. 
 8) Scroll down and find a variable called "userData." Change the username field to be the email you use to login into LinkedIn. Change the password field to your LinkedIn password. 
 9) Now open LinkedIn on a new Google Chrome window and suppose you want to message anyone who comes up under a search for "early stage investor" To do this, type "early stage investor" in the search bar. Then, click "People". Then click "Connections" and make sure 1st and 2nd ONLY are selected. Then apply any other filters you want (I reccomend using Location filter). Once you are done, copy the URL. 
