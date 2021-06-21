@@ -6,9 +6,9 @@ Functionality: This bot will automatically open up Google Chrome and Connect and
 Prerequesites (Do this first!): 
 
 1) Open up Terminal on your Mac and run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`. This will install a package manager called Homebrew. 
-2) Run `brew install git` 
-3) Now, run `brew install python3`. 
-4) Now run `python3 -m pip install selenium`.
+2) Run `brew install git` to install Git. 
+3) Now, run `brew install python3` to install Python3. 
+4) Now run `python3 -m pip install selenium` to install Selenium package. 
 
 Setup: 
 
