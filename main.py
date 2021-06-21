@@ -21,7 +21,7 @@ Bubbles
 
 """
 userData = {
-    "username": "rohans5@illinois.edu",
+    "username": "",
     "password": ""
 }
 
