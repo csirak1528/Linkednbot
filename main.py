@@ -4,17 +4,28 @@ import os
 import time
 
 
-browser = webdriver.Chrome('/Users/calebsirak/linkdenbot/chromedriver')
+browser = webdriver.Chrome('/Users/rohansreerama/Desktop/Linkednbot/chromedriver')
 
 MESSAGE = """
-Lets Talk about Distributed Systems
+Hello from Bubble Meets!
+
+I currently run a video communications startup where our primary focus is to reimagine virtual communications. Meet us today to learn how we're making Zoom obsolete! 
+
+https://eventbubbles.com
+https://calendly.com/rohans5/30min
+
+Best,
+Rohan Sreerama
+Founder & CEO
+Bubbles
+
 """
 userData = {
-    "username": "rudisystems@gmail.com",
-    "password": "rudinet21"
+    "username": "rohans5@illinois.edu",
+    "password": ""
 }
 
-search_link = "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
+search_link = "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22102095887%22%2C%2290000084%22%2C%22102277331%22%5D&keywords=pre-seed%20investor&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
 
 
 def loadLinkedin():
