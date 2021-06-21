@@ -78,8 +78,20 @@ def changeTab(id):
 
 
 def changePage():
-    browser.find_element_by_xpath(
-        "/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[5]/div/div/button[2]").click()
+    try:
+        for i in range(5):
+            try:
+                browser.find_element_by_xpath(
+                    "/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[2]/div[2]/div/button[2]").click()
+            except:
+                pass
+    except:
+        for i in range(5):
+            try:
+                browser.find_element_by_xpath(
+                    "/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[5]/div/div/button[2]").click()
+            except:
+                pass
 
 
 def loadPeople():
@@ -94,9 +106,20 @@ def loadPeople():
             time.sleep(1)
             browser.find_element_by_css_selector(
                 "#custom-message").send_keys(MESSAGE)
-            time.sleep(.4)
-            browser.find_element_by_xpath(
-                "/html/body/div[3]/div/div/div[3]/button[2]").click()
+            worked = False
+            for i in range(5):
+                if not worked:
+                    time.sleep(.4)
+                    try:
+                        browser.find_element_by_xpath(
+                            "/html/body/div[3]/div/div/div[3]/button[2]").click()
+                        worked = True
+                    except:
+                        worked = False
+                        pass
+            if not worked:
+                browser.find_element_by_xpath("").click()
+
             time.sleep(1)
         except:
             pass
