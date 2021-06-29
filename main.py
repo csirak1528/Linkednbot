@@ -4,28 +4,27 @@ import os
 import time
 
 
-browser = webdriver.Chrome('/Users/rohansreerama/Desktop/Linkednbot/chromedriver')
+browser = webdriver.Chrome('./chromedriver')
 
 MESSAGE = """
 Hello from Bubble Meets!
 
-I currently run a video communications startup where our primary focus is to reimagine virtual communications. Meet us today to learn how we're making Zoom obsolete! 
-
+I'm currently part of a video communications startup: our primary focus is reimagining virtual communications. Meet us to learn how we're making Zoom obsolete! 
 https://eventbubbles.com
 https://calendly.com/rohans5/30min
 
 Best,
-Rohan Sreerama
-Founder & CEO
+Maanav Kyabarsi
+Business Development
 Bubbles
-
 """
+#ENTER USERNAME PASSWORD HERE
 userData = {
     "username": "",
     "password": ""
 }
 
-search_link = "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22102095887%22%2C%2290000084%22%2C%22102277331%22%5D&keywords=pre-seed%20investor&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
+search_link = "https://www.linkedin.com/search/results/people/?keywords=b2b%20investors&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
 
 
 def loadLinkedin():
@@ -126,6 +125,7 @@ def loadPeople():
 if __name__ == "__main__":
     if len(MESSAGE) > 300:
         print("Please Edit Your Message Under 300 chars.")
+        print(len(MESSAGE))
     else:
         setup()
         i = 1
