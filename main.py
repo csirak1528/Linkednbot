@@ -2,43 +2,33 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import os
 import time
-
-
 browser = webdriver.Chrome('./chromedriver')
-
 MESSAGE = """
 Hello from Bubble Meets!
-
-I'm currently part of a video communications startup: our primary focus is reimagining virtual communications. Meet us to learn how we're making Zoom obsolete! 
-https://eventbubbles.com
+I work at run a video communications startup where our primary focus is to reimagine virtual communications. We're raising funding and would love to meet! 
+Product: https://eventbubbles.com
+Deck: https://onepager.vc/bubbles
 https://calendly.com/rohans5/30min
-
-Best,
-Maanav Kyabarsi
-Business Development
-Bubbles
 """
-#ENTER USERNAME PASSWORD HERE
 userData = {
-    "username": "",
-    "password": ""
+    "username": "calebsirak@gmail.com",
+    "password": "king2004"
 }
-
-search_link = "https://www.linkedin.com/search/results/people/?keywords=b2b%20investors&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
+search_link = "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22103644278%22%5D&keywords=angel%20investor&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
 
 
 def loadLinkedin():
     browser.get("https://www.linkedin.com/")
 
 
-def click(selector, id=False):
+def click(selector, x=False):
     fail = False
     for i in range(10):
         if not fail:
             fail = True
             try:
-                if id:
-                    browser.find_element_by_id(selector).click()
+                if x:
+                    browser.find_element_by_xpath(selector).click()
                 else:
                     browser.find_element_by_css_selector(selector).click()
                 time.sleep(1)
@@ -95,12 +85,10 @@ def loadPeople():
     for i in range(1, 12):
         time.sleep(2)
         try:
-            selector = f"/html/body/div[6]/div[3]/div/div[1]/div/div[1]/main/div/div/div[2]/ul/li[{i}]/div/div/div[3]/div/button"
-            browser.find_element_by_xpath(selector).click()
+            selector = f"/html/body/div[5]/div[3]/div/div[2]/div/div[1]/main/div/div/div[2]/ul/li[{i}]/div/div/div[3]/div/button"
+            click(selector, True)
             selector = "/html/body/div[3]/div/div/div[3]/button[1]"
-            time.sleep(2)
-            browser.find_element_by_xpath(selector).click()
-            time.sleep(1)
+            click(selector, True)
             browser.find_element_by_css_selector(
                 "#custom-message").send_keys(MESSAGE)
             worked = False
@@ -116,7 +104,6 @@ def loadPeople():
                         pass
             if not worked:
                 browser.find_element_by_xpath("").click()
-
             time.sleep(1)
         except:
             pass
@@ -125,7 +112,6 @@ def loadPeople():
 if __name__ == "__main__":
     if len(MESSAGE) > 300:
         print("Please Edit Your Message Under 300 chars.")
-        print(len(MESSAGE))
     else:
         setup()
         i = 1
