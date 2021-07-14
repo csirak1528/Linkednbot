@@ -11,8 +11,8 @@ Deck: https://onepager.vc/bubbles
 https://calendly.com/rohans5/30min
 """
 userData = {
-    "username": "calebsirak@gmail.com",
-    "password": "king2004"
+    "username": "",
+    "password": ""
 }
 search_link = "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22103644278%22%5D&keywords=angel%20investor&network=%5B%22F%22%2C%22S%22%5D&origin=FACETED_SEARCH"
 
