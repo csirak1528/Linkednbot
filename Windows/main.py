@@ -106,7 +106,26 @@ def loadPeople():
                 browser.find_element_by_xpath("").click()
             time.sleep(1)
         except:
-            pass
+            selector = f"/html/body/div[5]/div[3]/div/div[2]/div/div[1]/main/div/div/div[2]/ul/li[{i}]/div/div/div[3]/div/button"
+            click(selector, True)
+            selector = "/html/body/div[3]/div/div/div[3]/button[1]"
+            click(selector, True)
+            browser.find_element_by_css_selector(
+                "#custom-message").send_keys(MESSAGE)
+            worked = False
+            for i in range(5):
+                if not worked:
+                    time.sleep(.4)
+                    try:
+                        browser.find_element_by_xpath(
+                            "/html/body/div[3]/div/div/div[3]/button[2]").click()
+                        worked = True
+                    except:
+                        worked = False
+                        pass
+            if not worked:
+                browser.find_element_by_xpath("").click()
+            time.sleep(1)
 
 
 if __name__ == "__main__":
