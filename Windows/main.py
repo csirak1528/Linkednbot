@@ -23,7 +23,7 @@ def loadLinkedin():
 
 def click(selector, x=False):
     fail = False
-    for i in range(10):
+    for i in range(3):
         if not fail:
             fail = True
             try:
@@ -31,7 +31,7 @@ def click(selector, x=False):
                     browser.find_element_by_xpath(selector).click()
                 else:
                     browser.find_element_by_css_selector(selector).click()
-                time.sleep(1)
+                time.sleep(.7)
             except:
                 fail = False
         else:
